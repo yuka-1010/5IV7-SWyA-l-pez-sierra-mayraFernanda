@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado César</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div>
+        <h1>Cifrado de César</h1>
+    <form id="cifrado" name="cifrado">
+    <br>
+    <br>
+    <textarea id="cadena" cols="30" rows="10"></textarea>
+    <br>
+    <br>
+    Ingresa el número de posiciones: <input type="text" id="posc" name="posc">
+    <br>
+    <br>
+    <p><input type="button" value="Cifrar" onclick="cifrar()" >
+        <input type="button" value="Descifrar" onclick="descifrar()" ></p>
+    <div id="resultado" >
+    </div>
+
+    <script src="js/cesar.js" ></script>
+</form>
+
+</div>
+</body>
+</html>
