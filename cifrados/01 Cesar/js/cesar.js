@@ -1,12 +1,10 @@
 var cesar = cesar || (function(){
-    
     var proceso = function(txt, desp, action){
-        
         var replace = (function(){
             //primero necesito tener la matriz del alfabeto
             //hay que recorrar que el cifrado lo hace caracter por caracter
             var abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-                        'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 
+                        'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 
                         'x', 'y', 'z'];
             var l = abc.length;
 
@@ -22,7 +20,6 @@ var cesar = cesar || (function(){
                 //alert(c);
                 //alert(i);
 
-                
                 if(i != -1){
                     //primero obtenemos la posicion para el desp
                     var pos = i;
@@ -45,7 +42,7 @@ var cesar = cesar || (function(){
             };
         })();
         //tenemos que saber que el texto este acorde al abc
-        var re = (/([a-zñ])/ig);
+        var re = (/([a-zñ?])/ig);
         //una funcion que se encargue del intercambio
         return String(txt).replace(re, function(match){
             return replace(match);
@@ -67,15 +64,15 @@ var cesar = cesar || (function(){
 //funcion de cifrado
 
 function cifrar(){
-    var rango = document.cifrado.posc.value;
+    var rango = document.getElementById("posc").value;
     document.getElementById("resultado").innerHTML =
-    cesar.encode(document.getElementById("cadena").value, rango);
+    cesar.encode(document.getElementById("cadena").value, parseInt(rango));
 }
 
 //funcion de descifrado
 
 function descifrar(){
-    var rango = document.cifrado.posc.value;
+    var rango = document.getElementById("posc").value;
     document.getElementById("resultado").innerHTML =
-    cesar.decode(document.getElementById("cadena").value, rango);
+    cesar.decode(document.getElementById("cadena").value, parseInt(rango));
 }

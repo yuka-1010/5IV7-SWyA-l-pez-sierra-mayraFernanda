@@ -12,7 +12,7 @@ let key = "";
 
 
 $(document).ready(function(){
-    $('#ci').click(function(){
+    $('ci').click(function(){
 
         //para cifrar vamos a usar la funcion
         // y = (x+z)mod27 pq estamos usando la ñ
@@ -55,9 +55,7 @@ $(document).ready(function(){
                 newMess += abc[newVal];  //mensaje cifrado
             }
             //imprimir el resultado
-  
-            var element = document.getElementById("rs");
-            element.innerHTML = newMess;
+            document.getElementById('rs').value = alert(newMess);
 
         }else{
             //aqui es si no se cumple las condiciones
@@ -65,7 +63,7 @@ $(document).ready(function(){
 
 
     });
-    $('#de').click(function(){
+    $('de').click(function(){
 
         //para cifrar vamos a usar la funcion
         // y = (x+z)mod27 pq estamos usando la ñ
@@ -109,6 +107,7 @@ $(document).ready(function(){
             }
             //imprimir el resultado
             document.getElementById('rs').value = newMess;
+
         }else{
             //aqui es si no se cumple las condiciones
         }
